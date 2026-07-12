@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISE — Kirim uang ke luar negeri, tanpa drama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="#" class="logo" aria-label="Alirkan beranda">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 15L9 7H16L12 13H19L7 22L10 15H3Z" fill="currentColor"/>
+      </svg>
+      <b>WISE</b>
+    </a>
+    <nav class="main-nav">
+      <a href="#kalkulator">Kirim uang</a>
+      <a href="#biaya">Biaya</a>
+      <a href="#cara-kerja">Cara kerja</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Kirim uang<br>secepat kamu<br>mengetiknya</h1>
+        <p class="hero-sub">Kurs asli tengah pasar, biaya yang kelihatan dari awal, dan uang sampai dalam hitungan jam — bukan hari. Sudah dipakai lebih dari 12 juta orang untuk kirim uang ke 40+ negara.</p>
+        <div class="hero-cta-row">
+          <a href="#kalkulator" class="btn btn-ink">Mulai kirim uang</a>
+          <span class="hero-note">Tanpa biaya tersembunyi</span>
+        </div>
+      </div>
+
+      <div class="calc-card" id="kalkulator">
+        <div class="calc-tabs" role="tablist" aria-label="Arah transfer">
+          <button class="calc-tab active" type="button" data-mode="kirim">Kirim</button>
+          <button class="calc-tab" type="button" data-mode="terima">Terima</button>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label" for="amountFrom" id="labelFrom">Kamu kirim</label>
+          <div class="calc-field">
+            <input id="amountFrom" class="calc-input" type="text" inputmode="numeric" value="0">
+            <button class="calc-currency" id="currencyFrom" type="button">
+              <span class="flag">🇮🇩</span> IDR <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <button class="swap-btn" id="swapBtn" type="button" aria-label="Tukar arah">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5H14M14 6.5L10.5 3M14 6.5L10.5 10M14 11.5H4M4 11.5L7.5 8M4 11.5L7.5 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="calc-row">
+          <label class="calc-label" for="amountTo" id="labelTo">Penerima dapat</label>
+          <div class="calc-field">
+            <input id="amountTo" class="calc-input" type="text" readonly value="923,41">
+            <button class="calc-currency" id="currencyTo" type="button">
+              <span class="flag">🇺🇸</span> USD <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="calc-meta">
+          <div class="calc-meta-row">
+            <span>Kurs tengah pasar</span>
+            <span class="mono" id="rateDisplay">1 USD = 16.240 IDR</span>
+          </div>
+          <div class="calc-meta-row">
+            <span>Biaya WISE</span>
+            <span class="mono">Rp 86.250</span>
+          </div>
+          <div class="calc-meta-row">
+            <span>Sampai tujuan</span>
+            <span class="mono strong">± 4 jam</span>
+          </div>
+        </div>
+
+        <a href="alirkan-konfirmasi/index.html" class="btn btn-full">Lanjutkan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-band" aria-hidden="true">
+    <div class="ticker-track">
+      <span>USD/IDR 16.240</span><span>·</span>
+      <span>EUR/IDR 17.615</span><span>·</span>
+      <span>SGD/IDR 12.030</span><span>·</span>
+      <span>JPY/IDR 104,2</span><span>·</span>
+      <span>GBP/IDR 20.680</span><span>·</span>
+      <span>AUD/IDR 10.740</span><span>·</span>
+      <span>USD/IDR 16.240</span><span>·</span>
+      <span>EUR/IDR 17.615</span><span>·</span>
+      <span>SGD/IDR 12.030</span><span>·</span>
+      <span>JPY/IDR 104,2</span><span>·</span>
+      <span>GBP/IDR 20.680</span><span>·</span>
+      <span>AUD/IDR 10.740</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="biaya">
+    <div class="wrap">
+      <p class="eyebrow">Kenapa WISE</p>
+      <h2 class="section-title">Biaya bank yang biasa kamu bayar,<br>diam-diam disembunyikan di kursnya</h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">Rp</div>
+          <h3>Kurs asli, bukan markup</h3>
+          <p>Kami pakai kurs tengah pasar yang sama seperti di global. Biaya kami tampil terpisah dan jelas sebelum kamu kirim — bukan disisipkan diam-diam ke nilai tukar.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Sampai dalam hitungan jam</h3>
+          <p>Sebagian besar transfer ke rekening bank sampai dalam 1 hari kerja, banyak yang bahkan sampai dalam hitungan menit ke jam, tergantung negara tujuan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Diawasi regulator</h3>
+          <p>WISE terdaftar dan diawasi oleh otoritas keuangan di setiap negara tempat kami beroperasi. Dana nasabah disimpan terpisah dari dana operasional.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👁</div>
+          <h3>Tidak ada biaya siluman</h3>
+          <p>Kamu lihat total biaya sebelum menekan kirim. Tidak ada potongan tambahan di tengah jalan, tidak ada kejutan saat uang sudah sampai ke penerima.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-dark" id="cara-kerja">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light">Cara kerja</p>
+      <h2 class="section-title light">Tiga langkah, selesai sebelum kopimu dingin.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Masukkan jumlah</h3>
+          <p>Pilih negara tujuan dan jumlah yang mau dikirim. Kami tunjukkan kurs dan biaya di muka, tanpa perlu daftar dulu.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Verifikasi identitas</h3>
+          <p>konfirmasi data diri sekali saja. Prosesnya sekitar 2 menit untuk transfer pertamamu.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Kami alirkan</h3>
+          <p>Transfer dari rekeningmu, dan kami teruskan ke penerima lewat jalur lokal tercepat di negara tujuan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-band">
+    <div class="wrap stats-grid">
+      <div class="stat">
+        <span class="stat-num">12 jt+</span>
+        <span class="stat-label">pengguna aktif</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">40+</span>
+        <span class="stat-label">negara tujuan</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Rp 890 M</span>
+        <span class="stat-label">dikirim tiap bulan</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4.8/5</span>
+        <span class="stat-label">rating pengguna</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>Kirim transfer pertamamu<br>hari ini</h2>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo logo-light">
+        <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 15L9 7H16L12 13H19L7 22L10 15H3Z" fill="currentColor"/>
+        </svg>
+        WISE
+      </a>
+      <p>Cara yang lebih murah dan lebih jujur untuk kirim uang ke luar negeri</p>
+    </div>
+    <div class="footer-col">
+      <h4>Produk</h4>
+      <a href="#">Kirim uang</a>
+      <a href="#">Untuk bisnis</a>
+      <a href="#">Kartu WISE</a>
+      <a href="#">Kurs hari ini</a>
+    </div>
+    <div class="footer-col">
+      <h4>Perusahaan</h4>
+      <a href="#">Tentang kami</a>
+      <a href="#">Karier</a>
+      <a href="#">Pers</a>
+      <a href="#">Keamanan</a>
+    </div>
+    <div class="footer-col">
+      <h4>Bantuan</h4>
+      <a href="#">Pusat bantuan</a>
+      <a href="#">Hubungi kami</a>
+      <a href="#">Syarat & ketentuan</a>
+      <a href="#">Privasi</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

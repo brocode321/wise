@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISE — Konfirmasi Transfer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="#" class="logo" aria-label="Alirkan beranda">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 15L9 7H16L12 13H19L7 22L10 15H3Z" fill="currentColor"/>
+      </svg>
+      <b>WISE</b>
+    </a>
+  </div>
+</header>
+
+<main class="form-page">
+  <div class="wrap form-wrap">
+
+    <div class="form-intro">
+      <p class="eyebrow">Konfirmasi transfer</p>
+      <h1>Lengkapi data penerima</h1>
+      <p class="form-intro-sub">Pastikan semua data sesuai. Ini membantu dana sampai ke penerima yang tepat tanpa keterlambatan.</p>
+    </div>
+
+    <form class="confirm-form" id="confirmForm" novalidate>
+
+      <!-- INFORMASI PENERIMA -->
+      <section class="form-section">
+        <div class="form-section-head">
+          <span class="section-badge">01</span>
+          <div>
+            <h2>Informasi penerima</h2>
+            <p>Data orang yang akan menerima dana.</p>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          
+
+          <div class="field">
+            <label for="receiverCountry">Negara</label>
+            <select id="receiverCountry" name="receiverCountry" required>
+              <option value="" disabled selected>Pilih negara</option>
+              <option value="ID">Indonesia</option>
+              <option value="MY">Malaysia</option>
+              <option value="SG">Singapura</option>
+              <option value="US">Amerika Serikat</option>
+              <option value="AU">Australia</option>
+              <option value="GB">Inggris</option>
+              <option value="JP">Jepang</option>
+              <option value="KR">Korea Selatan</option>
+              <option value="SA">Arab Saudi</option>
+              <option value="AE">Uni Emirat Arab</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+            <span class="error-msg">Pilih negara penerima</span>
+          </div>
+
+          <div class="field field-phone">
+            <label for="receiverPhone">No. HP</label>
+            <div class="phone-field">
+              <input type="tel" id="receiverPhone" name="receiverPhone" placeholder="812 3456 7890" inputmode="numeric" required>
+            </div>
+            <span class="error-msg">Nomor HP penerima wajib diisi</span>
+          </div>
+
+          <div class="field field-wide">
+            <label for="receiveMethod">Metode penerimaan</label>
+            <select id="receiveMethod" name="receiveMethod" required>
+              <option value="" disabled selected>Pilih metode penerimaan</option>
+              <option value="rekening">Transfer rekening bank</option>
+              <option value="dana">DANA</option>
+              <option value="gopay">GoPay</option>
+              <option value="shopeepay">ShopeePay</option>
+              <option value="ovo">OVO</option>
+              <option value="linkaja">LinkAja</option>
+              <option value="tunai">Ambil tunai di agen</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+            <span class="error-msg">Pilih metode penerimaan</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUKTI KONFIRMASI -->
+      <section class="form-section">
+        <div class="form-section-head">
+          <span class="section-badge">02</span>
+          <div>
+            <h2>Bukti konfirmasi penerimaan</h2>
+            <p>Unggah tangkapan layar atau foto nominal yang harus di tranfer oleh pengirim.</p>
+          </div>
+        </div>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="proofFile" name="proofFile" accept="image/*,.pdf" hidden>
+          <div class="upload-empty" id="uploadEmpty">
+            <div class="upload-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 14V3M11 3L6.5 7.5M11 3L15.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 15V16.5C3 17.8807 4.11929 19 5.5 19H16.5C17.8807 19 19 17.8807 19 16.5V15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+
+            <span class="upload-hint">PNG, JPG, atau PDF — maks 10MB</span>
+          </div>
+          <div class="upload-preview" id="uploadPreview" hidden>
+            <img id="previewImg" alt="Pratinjau bukti" hidden>
+            <button type="button" class="remove-file" id="removeFile">
+              <a href="test.html">Klick untuk pilih file</a>
+            </button>
+          </div>
+        </div>
+        <span class="error-msg" id="uploadError">Unggah bukti konfirmasi penerimaan</span>
+      </section>
+
+      <!-- KETERANGAN -->
+      <section class="form-section">
+        <div class="form-section-head">
+          <span class="section-badge">03</span>
+          <div>
+            <h2>Keterangan</h2>
+            <p>Pesan singkat untuk pengirim (opsional).</p>
+          </div>
+        </div>
+
+        <div class="field field-wide">
+          <label for="messageNote">Pesan buat si pengirim</label>
+          <textarea id="messageNote" name="messageNote" rows="4" placeholder="Contoh: terima kasih!"></textarea>
+        </div>
+      </section>
+
+      <div class="form-footer">
+        <p class="form-footer-note">Dengan menekan lanjutkan, kamu menyatakan bahwa seluruh data di atas benar dan sesuai.</p>
+        <button type="submit" class="btn btn-ink btn-submit">Lanjutkan</button>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
